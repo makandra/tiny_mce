@@ -8,10 +8,6 @@ require 'tiny_mce/helpers'
 module TinyMCE
   def self.initialize
     return if @intialized
-    raise "ActionController is not available yet." unless defined?(ActionController)
-    ActionController::Base.send(:include, TinyMCE::Base)
-    ActionController::Base.send(:helper, TinyMCE::Helpers)
-    # TinyMCE.install_or_update_tinymce
     @intialized = true
   end
 
